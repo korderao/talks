@@ -21,3 +21,14 @@ https://codetrace.com/users/draexx
 * Sha Bang (#!)
 
 - Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
+- Su función es indicarle al sistema que se trata de un conjunto de comandos para que sean Interpretados.
+- Es un número mágico de dos bytes.
+- El número mágico es un marcador especial para indicar el tipo de archivo.
+
+* Sha Bang (#!)
+
+- En la primera línea del script se debe indicar que shell que vas a usar.
+  ( /bin/bash/ , /usr/bin/perl , etc )
+
+.code  #!/bin/bash
+
