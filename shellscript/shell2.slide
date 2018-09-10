@@ -30,11 +30,11 @@ https://codetrace.com/users/draexx
 - En la primera línea del script se debe indicar que shell que vas a usar.
  ( /bin/bash/ , /usr/bin/perl , etc )
 
-.code shabang
+.code scripts/shabang.sh
 
 * Comentarios
 
 - Para introducir comentarios se debe poner #.
 - Es importante añadir comentarios comentando la utilidad del script o las variables que se crean.
 
-.code comentario.sh
+.code scripts/comentario.sh
