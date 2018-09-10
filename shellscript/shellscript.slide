@@ -7,7 +7,17 @@ p.carranza.is@gmail.com
 @draexx
 https://codetrace.com/users/draexx
 
-* Dependency management 
+* Que es la Shell 
 
-- Major missing feature in Go
-- Google uses monorepo
+- Es un intérprete de comandos
+- Es un programa a medio camino entre el usuario y el sistema operativo
+- Es también considerado un lenguaje de programación
+
+* ¿Qué es Shell Scripting?
+
+- Es un script para la Shell de comandos (terminal).
+- Es una herramienta fácil de utilizar para construir aplicaciones “pegando” llamadas al sistema, herramientas, utilidades y archivos binarios.
+
+* Sha Bang (#!)
+
+- Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
