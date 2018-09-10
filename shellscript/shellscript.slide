@@ -1,0 +1,12 @@
+Go modules
+Reliable dependency management for Go
+
+Roger Peppe
+Canonical Ltd
+rogpeppe@gmail.com
+@rogpeppe
+
+* Dependency management 
+
+- Major missing feature in Go
+- Google uses monorepo
