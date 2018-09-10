@@ -30,5 +30,5 @@ https://codetrace.com/users/draexx
 - En la primera línea del script se debe indicar que shell que vas a usar.
   ( /bin/bash/ , /usr/bin/perl , etc )
 
-.code  #!/bin/bash
+.code shabang /^func main/,/^}/
 
