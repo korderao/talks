@@ -79,7 +79,7 @@ ejemplo:
 
 * Ejemplos
 
-.play scripts/variables.sh
+.code scripts/variables.sh
 
 * Reglas para definir variables.
 
@@ -93,7 +93,7 @@ ejemplo:
 
 * Ejemplo
 
-.play scripts/variablesdef.sh
+.code scripts/variablesdef.sh
 
 * Aritmética en shell script
 
