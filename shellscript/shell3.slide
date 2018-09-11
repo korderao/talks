@@ -16,7 +16,7 @@ https://codetrace.com/users/draexx
 
 * Los Shell más comunes en Linux son:
 
-# .image image/shells.png 600
+.image image/shells.png 600
 Para saber que shell hay disponibles en el sistema utilice el comando:
   cat /etc/shells
   
@@ -27,13 +27,13 @@ Para saber que shell hay disponibles en el sistema utilice el comando:
 - Es una herramienta fácil de utilizar para construir aplicaciones “pegando” llamadas al sistema, herramientas, utilidades y archivos binarios.
 - Puede ser automático.
 
-** ¿Por qué crear un shell script?
+* ¿Por qué crear un shell script?
 
 - Para ahorrar tiempo en tareas repetitivas.
 - Para automatizar algunas tareas de la vida diaria.
 - Para automatizar algunas tareas de administración del servidor.
 
-*
+* ¿Cómo crearlo?
 
 - Crear un archivo de tecto plano con el editor de su preferencia
 ejemplo:
@@ -93,7 +93,7 @@ ejemplo:
 
 * Ejemplo
 
-.code scripts/variablesdef.sh
+.play scripts/variablesdef.sh
 
 * Aritmética en shell script
 
@@ -106,10 +106,10 @@ ejemplo:
 
 - Shell script al ser interactivo puede recibir argumentos al momento de su ejecución.
  
-# .image image/argumentos.png
+# .image image/argumentos.png 600
  .code scripts/argumentos.sh
  
- * Estructuras condicionales if .. then
+* Estructuras condicionales if .. then
  
   #!/bin/bash
   ...
@@ -118,7 +118,7 @@ ejemplo:
   fi
   ...
   
- * Condicional if .. then .. else
+* Condicional if .. then .. else
  
   #!/bin/bash
   ...
@@ -129,7 +129,7 @@ ejemplo:
   fi
   ...
   
- * Condicional if .. then .. elif
+* Condicional if .. then .. elif
  
   #!/bin/bash
   ...
@@ -168,7 +168,7 @@ ejemplo:
     let CONTADOR=CONTADOR+1
   done
   
- * Ejemplo de until...
+* Ejemplo de until...
  
   #!/bin/bash
   CONTADOR=20
