@@ -16,7 +16,7 @@ https://codetrace.com/users/draexx
 
 * Los Shell más comunes en Linux son:
 
-.image image/shells.png _ 600
+.image image/shells.png _ 690
 - Para saber que shell hay disponibles en el sistema utilice el comando:
   cat /etc/shells
   
@@ -79,7 +79,7 @@ ejemplo:
 
 * Ejemplos
 
-.code -numbers scripts/variables.sh
+.code scripts/variables.sh
 
 * Reglas para definir variables.
 
@@ -93,7 +93,7 @@ ejemplo:
 
 * Ejemplo
 
-.play scripts/variablesdef.sh
+.play -edit scripts/variablesdef.sh
 
 * Aritmética en shell script
 
@@ -106,8 +106,8 @@ ejemplo:
 
 - Shell script al ser interactivo puede recibir argumentos al momento de su ejecución.
  
-.image image/argumentos.png _ 600
- .code scripts/argumentos.sh
+.image image/argumentos.png _ 690
+.code scripts/argumentos.sh
  
 * Estructuras condicionales if .. then
  
