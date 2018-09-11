@@ -16,8 +16,8 @@ https://codetrace.com/users/draexx
 
 * Los Shell más comunes en Linux son:
 
-.image image/shells.png
-Para saber que shell hay disponibles en el sistema utilice el comando:
+.image image/shells.png _ 350
+- Para saber que shell hay disponibles en el sistema utilice el comando:
   cat /etc/shells
   
 * ¿Qué es Shell Script?
