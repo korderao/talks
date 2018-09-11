@@ -16,7 +16,7 @@ https://codetrace.com/users/draexx
 
 * Los Shell más comunes en Linux son:
 
-.image image/shells.png 600
+# .image image/shells.png 600
 Para saber que shell hay disponibles en el sistema utilice el comando:
   cat /etc/shells
   
@@ -70,9 +70,9 @@ ejemplo:
 - Al igual que cualquier otro lenguaje de programación, los programas escritos en bash shell o Shell script pueden usar variables.
 - No tienen tipo.
 - Se definen: 
- VARIABLE:"Valor"
-- Para utilizar su contenido se antepone un signo $:
- $VARIABLE
+  VARIABLE:"Valor"
+- Para utilizar su contenido se antepone un signo *$*:
+  $VARIABLE
 - Existen dos tipos de variables.
 - Variables del sistema: Están creadas y predefinidas por el sistema, normalmente se representan en mayúsculas.
 - Variables del usuario: Son definidas por el usuario, normalmente se representan en minúsculas.
@@ -106,7 +106,7 @@ ejemplo:
 
 - Shell script al ser interactivo puede recibir argumentos al momento de su ejecución.
  
- .image image/argumentos.png
+# .image image/argumentos.png
  .code scripts/argumentos.sh
  
  * Estructuras condicionales if .. then
