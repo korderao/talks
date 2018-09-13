@@ -36,7 +36,7 @@ http://itgroup.systems
 
 * ¿Cómo crearlo?
 
-- Crear un archivo de tecto plano con el editor de su preferencia
+- Crear un archivo de texto plano con el editor de su preferencia
 ejemplo:
   nano script.sh
 - No olvidar cambiar los permisos con chmod para hacer el shellscript ejecutable.
