@@ -12,6 +12,7 @@ http://itgroup.systems
 
 - Es un intérprete de comandos
 - Es un programa a medio camino entre el usuario y el sistema operativo
+- Es un programa que permite a los usuarios interactuar con el sistema, procesando las órdenes que se le indican.
 - Es también considerado un lenguaje de programación
 - No es parte del kernel pero trabajan de la mano.
 
@@ -25,8 +26,7 @@ http://itgroup.systems
 
 - Es un script para la Shell de comandos (terminal).
 - Es una seride de comandos escritos en un archivo de texto plano.
-- Es una herramienta fácil de utilizar para construir aplicaciones “pegando” llamadas al sistema, herramientas, utilidades y archivos binarios.
-- Puede ser automático.
+- Puede ser automático utilizando cron.
 
 * ¿Por qué crear un shell script?
 
@@ -36,6 +36,8 @@ http://itgroup.systems
 
 * ¿Cómo crearlo?
 
+- En su forma más básica, un shell-script puede ser un simple fichero de texto que contenga uno o varios comandos. 
+- Para ayudar a la identificación del contenido a partir del nombre del archivo, es habitual que los shell scripts tengan la extensión ".sh" (pero recuerde que es algo meramente informativo y opcional).
 - Crear un archivo de texto plano con el editor de su preferencia
 ejemplo:
   nano script.sh
