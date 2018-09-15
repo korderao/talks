@@ -51,10 +51,10 @@ ejemplo:
 
 - Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
 - Su función es indicarle al sistema que se trata de un conjunto de comandos para que sean Interpretados.
-- Es un número mágico de dos bytes.
-- El número mágico es un marcador especial para indicar el tipo de archivo.
+- A continuación de estos caracteres se indica la ruta completa al intérprete de las órdenes
+- 
 
-* Sha Bang (#!)
+* She Bang (#!)
 
 - En la primera línea del script se debe indicar que shell que vas a usar.
  ( /bin/bash/ , /usr/bin/perl , etc )
@@ -64,7 +64,7 @@ ejemplo:
 * Comentarios
 
 - Para introducir comentarios se debe poner #.
-- Es importante añadir comentarios comentando la utilidad del script o las variables que se crean.
+- Es importante añadir comentarios describiendo la utilidad del script o las variables que se crean.
 
 .code scripts/comentario.sh
 
@@ -73,7 +73,7 @@ ejemplo:
 - Al igual que cualquier otro lenguaje de programación, los programas escritos en bash shell o Shell script pueden usar variables.
 - No tienen tipo.
 - Se definen: 
-  VARIABLE:"Valor"
+  VARIABLE="Valor"
 - Para utilizar su contenido se antepone un signo *$*:
   $VARIABLE
 - Existen dos tipos de variables.
@@ -138,10 +138,10 @@ ejemplo:
   ...
   if [ $USER = root ]; then
      echo “El usuario es root”
-  elif [ $(whoami) = gallego ]; then
-     echo “El usuario es El G@llego”
+  elif [ $(whoami) = korderao ]; then
+     echo “El usuario es korderao”
   else
-     echo “Vos quien sos?”
+     echo “Usuario desconocido?”
   fi
   ...
   
