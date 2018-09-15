@@ -1,0 +1,192 @@
+Shellscript
+Introducción a Shell Script
+
+Jose Luis Cordero Llanos
+Developer
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+
+* Que es la Shell
+
+- Es un intérprete de comandos
+- Es un programa a medio camino entre el usuario y el sistema operativo
+- Es un programa que permite a los usuarios interactuar con el sistema, procesando las órdenes que se le indican.
+- Es también considerado un lenguaje de programación
+- No es parte del kernel pero trabajan de la mano.
+
+* Los Shell más comunes en Linux son:
+
+.image image/shells.png _ 690
+- Para saber que shell hay disponibles en el sistema utilice el comando:
+  cat /etc/shells
+  
+* ¿Qué es Shell Script?
+
+- Es un script para la Shell de comandos (terminal).
+- Es una seride de comandos escritos en un archivo de texto plano.
+- Puede ser automático utilizando cron.
+
+* ¿Por qué crear un shell script?
+
+- Para ahorrar tiempo en tareas repetitivas.
+- Para automatizar algunas tareas de la vida diaria.
+- Para automatizar algunas tareas de administración del servidor.
+
+* ¿Cómo crearlo?
+
+- En su forma más básica, un shell-script puede ser un simple fichero de texto que contenga uno o varios comandos. 
+- Para ayudar a la identificación del contenido a partir del nombre del archivo, es habitual que los shell scripts tengan la extensión ".sh" (pero recuerde que es algo meramente informativo y opcional).
+- Crear un archivo de texto plano con el editor de su preferencia
+ejemplo:
+  nano script.sh
+- No olvidar cambiar los permisos con chmod para hacer el shellscript ejecutable.
+- Ejecute el shell script, opsiones posibles:
+  bash script.sh
+  sh script.sh
+  ./script.sh
+  
+* Sha Bang (#!)
+
+- Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
+- Su función es indicarle al sistema que se trata de un conjunto de comandos para que sean Interpretados.
+- Es un número mágico de dos bytes.
+- El número mágico es un marcador especial para indicar el tipo de archivo.
+
+* Sha Bang (#!)
+
+- En la primera línea del script se debe indicar que shell que vas a usar.
+ ( /bin/bash/ , /usr/bin/perl , etc )
+
+.code scripts/shabang.sh
+
+* Comentarios
+
+- Para introducir comentarios se debe poner #.
+- Es importante añadir comentarios comentando la utilidad del script o las variables que se crean.
+
+.code scripts/comentario.sh
+
+* Definición de Variables
+
+- Al igual que cualquier otro lenguaje de programación, los programas escritos en bash shell o Shell script pueden usar variables.
+- No tienen tipo.
+- Se definen: 
+  VARIABLE:"Valor"
+- Para utilizar su contenido se antepone un signo *$*:
+  $VARIABLE
+- Existen dos tipos de variables.
+- Variables del sistema: Están creadas y predefinidas por el sistema, normalmente se representan en mayúsculas.
+- Variables del usuario: Son definidas por el usuario, normalmente se representan en minúsculas.
+
+* Ejemplos
+
+.code scripts/variables.sh
+
+* Reglas para definir variables.
+
+- No poner espacios
+ N=10
+- Las variables son sencibles a las mayúsculas, N y n son variables diferentes.
+- Se pueden definir variables con valor *NULL*
+ vech=
+ vech=""
+- No usar caracteres extraños como ¡,?,* etc, en los nombres de las variables.
+
+* Ejemplo
+
+.play -edit scripts/variablesdef.sh
+
+* Aritmética en shell script
+
+- Podemos realizar las operaciones mediante uso de:
+  let c=$a+$b
+  c='expr $a + $b'
+  c=$((a+b))  # bash y ksh
+
+* Recibir Argumentos
+
+- Shell script al ser interactivo puede recibir argumentos al momento de su ejecución.
+ 
+.image image/argumentos.png _ 690
+.code scripts/argumentos.sh
+ 
+* Estructuras condicionales if .. then
+ 
+  #!/bin/bash
+  ...
+  if [ !$# ]; then
+    echo “Hay parametros”
+  fi
+  ...
+  
+* Condicional if .. then .. else
+ 
+  #!/bin/bash
+  ...
+  if [ $(whoami) = root ]; then
+    return 0
+  else
+    return 1
+  fi
+  ...
+  
+* Condicional if .. then .. elif
+ 
+  #!/bin/bash
+  ...
+  if [ $USER = root ]; then
+     echo “El usuario es root”
+  elif [ $(whoami) = gallego ]; then
+     echo “El usuario es El G@llego”
+  else
+     echo “Vos quien sos?”
+  fi
+  ...
+  
+* Ejemplo con argumentos
+
+.code scripts/condicionalargumentos.sh
+
+* Ciclos: for, while y until
+
+- El *for* es distinto a los de otros lenguajes de programación. Básicamente, le permite iterar sobre una serie de 'palabras' contenidas dentro de una cadena.
+- El *while* ejecuta un trozo de código si la expresión de control es verdadera, y termina cuando es falsa (o se encuentra una interrupción explícita dentro del código en ejecución).
+- El *until* es casi idéntico al while, excepto en que el código se ejecuta mientras la expresión de control se evalúe como falsa.
+
+* Ejemplo de for...
+
+  #!/bin/bash
+  for i in $( ls ); do
+    echo item: $i
+  done
+
+* Ejemplo de while...
+
+  #!/bin/bash
+  CONTADOR=0
+  while [ $CONTADOR -lt 10 ]; do
+    echo El contador es $CONTADOR
+    let CONTADOR=CONTADOR+1
+  done
+  
+* Ejemplo de until...
+ 
+  #!/bin/bash
+  CONTADOR=20
+  until [ $CONTADOR -lt 10 ]; do
+    echo CONTADOR $CONTADOR
+    let CONTADOR-=1
+  done
+  
+* La instrucción case...
+ 
+  case $USER; in
+    root)
+       echo "Usuario es root";;
+    academy)
+       echo "Usuario es Academy";;
+    *)
+echo "Y este quien es?";;
+  esac
