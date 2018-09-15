@@ -99,7 +99,7 @@ ejemplo:
 .play -edit scripts/variablesdef.sh
 
 * Aritmética en shell script
-
+- El formato para realizar una expansión aritmética es el siguiente: $((expresión)) 
 - Podemos realizar las operaciones mediante uso de:
   let c=$a+$b
   c='expr $a + $b'
