@@ -25,7 +25,7 @@ http://itgroup.systems
 * ¿Qué es Shell Script?
 
 - Es un script para la Shell de comandos (terminal).
-- Es una seride de comandos escritos en un archivo de texto plano.
+- Es una serie de comandos escritos en un archivo de texto plano.
 - Puede ser automático utilizando cron.
 
 * ¿Por qué crear un shell script?
