@@ -13,9 +13,9 @@ http://itgroup.systems
 - A efectos prácticos imagínate un cubo de basura, un pozo sin fondo o el espacio sideral al que lanzar cualquier cosa sin posibilidad de recuperarla
 - Pero si ya tengo comandos como rm, ¿para qué quiero otra cosa nueva que borre?
 - ¿cómo harías para anular en tiempo de ejecución la salida estándar de un error en un comando dentro de un script para la shell? Aquí es donde entra /dev/null.
-- usuario@laptop:~$ cat pruebas
+  usuario@laptop:~$ cat pruebas
   cat: pruebas: No existe el fichero o el directorio
-- usuario@laptop:~$ cat pruebas 2>/dev/null
+  usuario@laptop:~$ cat pruebas 2>/dev/null
   usuario@laptop:~$
 
 * Los Shell más comunes en Linux son:
