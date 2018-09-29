@@ -104,15 +104,14 @@ http://itgroup.systems
 - El demonio cron inicia de /etc/rc.d/ o /etc/init.d dependiendo de la distribucion. Cron se ejecuta en el background, revisa cada minuto la tabla de tareas crontab /etc/crontab o en /var/spool/cron en búsqueda de tareas que se deban cumplir. Como usuario podemos agregar comandos o scripts con tareas a cron para automatizar algunos procesos. Esto es util por ejemplo para automatizar la actualizacion de un sistema o un buen sistema de respaldos
 * Que es Crontab
 - Crontab es un simple archivo de texto que guarda una lista de comandos a ejecutar en un tiempo especificado por el usuario. Crontab verificará la fecha y hora en que se debe ejecutar el script o el comando, los permisos de ejecución y lo realizará en el background.
-
-##########################################################
-#minuto (0-59),                                          #
-#|  hora (0-23),                                         #
-#|  |  día del mes (1-31),                               #
-#|  |  |  mes (1-12),                                    #
-#|  |  |  |  día de la semana (0-6 donde 0=Domingo)      #
-#|  |  |  |  |       comandos                            #
-##########################################################
+  ##########################################################
+  #minuto (0-59),                                          #
+  #|  hora (0-23),                                         #
+  #|  |  día del mes (1-31),                               #
+  #|  |  |  mes (1-12),                                    #
+  #|  |  |  |  día de la semana (0-6 donde 0=Domingo)      #
+  #|  |  |  |  |       comandos                            #
+  ##########################################################
 * Comentarios
 
 - Para introducir comentarios se debe poner #.
