@@ -65,18 +65,17 @@ http://itgroup.systems
   echo ip:$ip
 * comando df
 - Es un comando estandar de Unix, usado para desplegar la cantidad de espacio libre o disponible en los sistemas de archivos a los que el usuario que lo invoca tiene permisos de lectura.
-  Las posibles opciones para mostrar el tamaño son:
-- opciones  
+- Las posibles opciones para mostrar el tamaño son:
+
   $ df -h    # formato humano 
   $ df -m    # formato en megabytes
   $ df -k    # formato en blockes de 1 kilobye, este es el default
 
-* Sha Bang (#!)
+* Ejemplo de df
 
-- Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
-- Su función es indicarle al sistema que se trata de un conjunto de comandos para que sean Interpretados.
-- A continuación de estos caracteres se indica la ruta completa al intérprete de las órdenes
-- 
+  #! /bin/bash
+  d=$(df -h | grep /$ | awk {'print $2'})
+  echo espacio de disco: $d
 
 * She Bang (#!)
 
