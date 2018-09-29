@@ -39,8 +39,16 @@ http://itgroup.systems
     NR → Número de líneas (records) en el stream/fichero a procesar.
 - ejemplo
     ls -l | awk {'print $3'}
- 
+* Comando grep
+- El comando linux grep permite encontrar líneas de texto que contengan un cadena o patrón dentro de uno o varios archivos y las las imprime. 
+- Las posibles opciones para mostrar el tamaño son:
+    -i ignora la deferencia entre mayúsculas y minúsculas en las búsquedas y las considera equivalentes.
+    -n muestra el texto de la línea y el número de línea dentro del archivo en la que se encontró
+    -c muestra solamente el número de líneas coincidentes
+    -l lista los archivos en donde se han encontrado coincidencias sin mostrar el texto
+    -r permite hacer búsquedas de forma recursiva dentro de los directorios que se encuentran en la ruta de búsqueda.
 
+ 
 * Comando free
 - El comando Free en Linux muestra la cantidad de memoria libre y usada que tiene el sistema. Por una parte muestra la memoria física y por otra la swap, también muestra la memoria caché y de buffer consumida por el Kernel.
 - Ejemplo  
