@@ -18,7 +18,7 @@ http://itgroup.systems
 - ejemplo  
   usuario@laptop:~$ cat pruebas 2>/dev/null
   usuario@laptop:~$
-- scrpit
+* Ejemplo del uso de /dev/null
 #!/bin/bash 
 if ping -c1 google.com &>/dev/null 
 then 
@@ -26,7 +26,8 @@ then
 else 
 	conec='null'
 fi
-
+ echo $conec
+ 
 * Los Shell más comunes en Linux son:
 
 .image image/shells.png _ 690
