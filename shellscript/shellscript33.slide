@@ -64,8 +64,9 @@ http://itgroup.systems
   ip=$(ip a s wlp7s0 2>/dev/null | awk '/inet / {print $2}')
   echo ip:$ip
 * comando df
-  Es un comando estandar de Unix, usado para desplegar la cantidad de espacio libre o disponible en los sistemas de archivos a los que el usuario que lo invoca tiene permisos de lectura.
+- Es un comando estandar de Unix, usado para desplegar la cantidad de espacio libre o disponible en los sistemas de archivos a los que el usuario que lo invoca tiene permisos de lectura.
   Las posibles opciones para mostrar el tamaño son:
+- opciones  
   $ df -h    # formato humano 
   $ df -m    # formato en megabytes
   $ df -k    # formato en blockes de 1 kilobye, este es el default
