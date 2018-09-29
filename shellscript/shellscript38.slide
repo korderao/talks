@@ -45,7 +45,11 @@ http://itgroup.systems
 - El comando Free en Linux muestra la cantidad de memoria libre y usada que tiene el sistema. Por una parte muestra la memoria física y por otra la swap, también muestra la memoria caché y de buffer consumida por el Kernel.
 - Ejemplo  
   $ free
-* ¿Por qué crear un shell script?
+* Ejemplo del uso de free, grep y awk
+  #! /bin/bash
+  ram=$(free | grep 'Mem:' | awk {'print $2'})
+  echo ram: $ram
+
 
 - Para ahorrar tiempo en tareas repetitivas.
 - Para automatizar algunas tareas de la vida diaria.
