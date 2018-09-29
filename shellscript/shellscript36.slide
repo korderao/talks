@@ -22,18 +22,25 @@ http://itgroup.systems
   #!/bin/bash 
   if ping -c1 google.com &>/dev/null 
   then 
-	conec='OK'
+  	conec='OK'
   else 
-	conec='null'
+  	conec='null'
   fi
   echo $conec
  
-* Los Shell más comunes en Linux son:
+* comando awk
 
-.image image/shells.png _ 690
-- Para saber que shell hay disponibles en el sistema utilice el comando:
-  cat /etc/shells
-  
+ awk [condicion] { comandos }
+
+    $0 → Mostrar la línea completa
+    $1-$N → Mostrar los campos (columnas) de la línea especificados.
+    FS → Field Separator (Espacio o TAB por defecto)
+    NF → Número de campos (fields) en la línea actual
+    NR → Número de líneas (records) en el stream/fichero a procesar.
+- ejemplo
+    ls -l | awk {'print $3'}
+ 
+
 * ¿Qué es Shell Script?
 
 - Es un script para la Shell de comandos (terminal).
