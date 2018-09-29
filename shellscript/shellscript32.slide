@@ -63,19 +63,13 @@ http://itgroup.systems
   #! /bin/bash
   ip=$(ip a s wlp7s0 2>/dev/null | awk '/inet / {print $2}')
   echo ip:$ip
+* comando df
+  Es un comando estandar de Unix, usado para desplegar la cantidad de espacio libre o disponible en los sistemas de archivos a los que el usuario que lo invoca tiene permisos de lectura.
+  Las posibles opciones para mostrar el tamaño son:
+  $ df -h    # formato humano 
+  $ df -m    # formato en megabytes
+  $ df -k    # formato en blockes de 1 kilobye, este es el default
 
-
-- En su forma más básica, un shell-script puede ser un simple fichero de texto que contenga uno o varios comandos. 
-- Para ayudar a la identificación del contenido a partir del nombre del archivo, es habitual que los shell scripts tengan la extensión ".sh" (pero recuerde que es algo meramente informativo y opcional).
-- Crear un archivo de texto plano con el editor de su preferencia
-ejemplo:
-  nano script.sh
-- No olvidar cambiar los permisos con chmod para hacer el shellscript ejecutable.
-- Ejecute el shell script, opsiones posibles:
-  bash script.sh
-  sh script.sh
-  ./script.sh
-  
 * Sha Bang (#!)
 
 - Se denomina “sha-bang” a la secuencia #! con la que se inician los scripts.
