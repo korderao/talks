@@ -15,18 +15,18 @@ http://itgroup.systems
 - ¿cómo harías para anular en tiempo de ejecución la salida estándar de un error en un comando dentro de un script para la shell? Aquí es donde entra /dev/null.
   usuario@laptop:~$ cat pruebas
   cat: pruebas: No existe el fichero o el directorio
-- ejemplo  
   usuario@laptop:~$ cat pruebas 2>/dev/null
   usuario@laptop:~$
 * Ejemplo del uso de /dev/null
-#!/bin/bash 
-if ping -c1 google.com &>/dev/null 
-then 
+  
+  #!/bin/bash 
+  if ping -c1 google.com &>/dev/null 
+  then 
 	conec='OK'
-else 
+  else 
 	conec='null'
-fi
- echo $conec
+  fi
+  echo $conec
  
 * Los Shell más comunes en Linux son:
 
