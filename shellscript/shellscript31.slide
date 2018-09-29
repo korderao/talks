@@ -59,7 +59,7 @@ http://itgroup.systems
 - Esto es para abrir una interfaz, para deshabilitar una interfaz el comando es:
   $ ifconfig eth0 down
 
-*Ejemplo del uso de ifconfig y awk
+* Ejemplo del uso de ifconfig y awk
   #! /bin/bash
   ip=$(ip a s wlp7s0 2>/dev/null | awk '/inet / {print $2}')
   echo ip:$ip
