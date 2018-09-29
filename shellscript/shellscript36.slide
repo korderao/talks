@@ -47,7 +47,8 @@ http://itgroup.systems
     -c muestra solamente el número de líneas coincidentes
     -l lista los archivos en donde se han encontrado coincidencias sin mostrar el texto
     -r permite hacer búsquedas de forma recursiva dentro de los directorios que se encuentran en la ruta de búsqueda.
-
+- Ejemplo
+  $ grep -i nologin /etc/passwd
  
 * Comando free
 - El comando Free en Linux muestra la cantidad de memoria libre y usada que tiene el sistema. Por una parte muestra la memoria física y por otra la swap, también muestra la memoria caché y de buffer consumida por el Kernel.
@@ -66,6 +67,17 @@ http://itgroup.systems
   $ ifconfig eth0 up
 - Esto es para abrir una interfaz, para deshabilitar una interfaz el comando es:
   $ ifconfig eth0 down
+* ifconfig
+- Para asignar una dirección IP a la interfaz mediante ifconfig, el comando:
+  $ ifconfig eth0 192.168.5.45
+- A continuación asignaremos la máscara de red para la dirección IP asignada y el comando para hacerlo es:
+  $ ifconfig netmask 255.255.240.0
+- Por último, para asignar una dirección de difusión, el comando es:
+  $ ifconfig broadcast 192.168.5.255
+- Para asignar una puerta de enlace, ejecuta el siguiente comando:
+  $ route add default gw 192.168.5.10
+- Y para agregar DNS, ejecutar:
+  $ echo “nameserver 8.8.8.8” > /etc/resolv.conf
 
 * Ejemplo del uso de ifconfig y awk
   #! /bin/bash
