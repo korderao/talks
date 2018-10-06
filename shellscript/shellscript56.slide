@@ -18,11 +18,9 @@ http://itgroup.systems
 *  ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - Al crear una cuenta de usuario en un sistema Linux, se añade una entrada en la lista de usuarios que se almacena en el archivo de contraseñas /etc/passwd. 
 - Este archivo es un archivo de texto donde cada línea contiene información de una única cuenta de usuario
-
 .image image/passwd.png _ 690
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - Archivo /etc/passwd
-
 .image image/apasswd.png _ 590
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
   Login: 
