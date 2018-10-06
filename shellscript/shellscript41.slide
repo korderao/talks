@@ -1,5 +1,5 @@
-Shellscript
-Introducción a Shell Script
+GESTION DE USUARIO 
+MODULO II
 
 Jose Luis Cordero Llanos
 Developer
@@ -8,15 +8,13 @@ korderao@gmail.com
 http://itgroup.systems
 
 
-* /dev/null
+* 1. INTRODUCCIÓN
+- Veremos como se gestionan los usuarios locales en un equipo con Linux, sea Server o Desktop.
+- Aunque en Linux hay algunas cosas diferentes, la base de la gestión de usuarios es la misma que en Windows.
+- Sólo existe un usuario que tiene privilegios para dar de alta usuarios en el equipo: el usuario root.
+- Los usuarios que vamos a gestionar son usuarios locales del sistema. Su gestión sólo afectará al equipo en el que estemos gestionando estos usuarios, y no afectará al resto de equipos de la red.
+- Veremos las órdenes para gestionar usuarios y grupos. Y dónde y cómo el S.O. almacena esta información.
 
-- A efectos prácticos imagínate un cubo de basura, un pozo sin fondo o el espacio sideral al que lanzar cualquier cosa sin posibilidad de recuperarla
-- Pero si ya tengo comandos como rm, ¿para qué quiero otra cosa nueva que borre?
-- ¿cómo harías para anular en tiempo de ejecución la salida estándar de un error en un comando dentro de un script para la shell? Aquí es donde entra /dev/null.
-  usuario@laptop:~$ cat pruebas
-  cat: pruebas: No existe el fichero o el directorio
-  usuario@laptop:~$ cat pruebas 2>/dev/null
-  usuario@laptop:~$
 * Ejemplo del uso de /dev/null
   
   #!/bin/bash 
