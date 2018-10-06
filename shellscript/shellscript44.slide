@@ -27,13 +27,17 @@ http://itgroup.systems
  
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - User ID: 
-  Cada cuenta de usuario requiere de un id único llamado UID (User Identifier). El UID es un entero no negativo. El usuario root tiene asignado el UID cero. Los UIDs comprendidos entre 1 y 499 están reservados para propósitos administrativos y los usuarios convencionales del sistema empiezan a partir del UID 500. 
+- Cada cuenta de usuario requiere de un id único llamado UID (User Identifier). El UID es un entero no negativo. El usuario root tiene asignado el UID cero. Los UIDs comprendidos entre 1 y 499 están reservados para propósitos administrativos y los usuarios convencionales del sistema empiezan a partir del UID 500. 
 - Group ID (GID): 
-  Cada usuario tiene asociado un grupo por defectocon un GID (Group Identifier). Igual que el UID, el GID es un entero no negativo. El GID de cada usuario almacenado en el archivo /etc/passwd es el identificador del grupo por defecto, aunque un usuario puede pertenecer a varios grupos.  
-* Comando free
-- El comando Free en Linux muestra la cantidad de memoria libre y usada que tiene el sistema. Por una parte muestra la memoria física y por otra la swap, también muestra la memoria caché y de buffer consumida por el Kernel.
-- Ejemplo  
-  $ free
+- Cada usuario tiene asociado un grupo por defectocon un GID (Group Identifier). Igual que el UID, el GID es un entero no negativo. El GID de cada usuario almacenado en el archivo /etc/passwd es el identificador del grupo por defecto, aunque un usuario puede pertenecer a varios grupos.  
+* ARCHIVO DE USUARIOS Y CONTRASEÑAS
+  Nombre del usuario: 
+- Es el nombre del usuario o comentario que define la cuenta de usuario. 
+  Directorio Personal de Trabajo (Directorio Home): 
+- Esta entrada especifica el directorio personal de trabajo del usuario. 
+  Shell: 
+- Indica que interprete de comandos usará el sistema por defecto para esta cuenta de usuario. Para las cuentas utilizadas para controlar permiso de archivos pero que nunca deberían iniciar una sesión, es posible especificar en el campo de shell /bin/false. El interprete de comandos /bin/false es un pequeño programa que no hace nada, impidiendo que se use la cuenta de usuario para iniciar una sesión en el sistema.
+
 * Ejemplo del uso de free, grep y awk
   #! /bin/bash
   ram=$(free | grep 'Mem:' | awk {'print $2'})
