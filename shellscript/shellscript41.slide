@@ -22,6 +22,7 @@ http://itgroup.systems
 .image image/passwd.png _ 690
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - Archivo /etc/passwd
+
 .image image/passwd2.png _ 690
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
   Login: 
