@@ -23,7 +23,7 @@ http://itgroup.systems
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - Archivo /etc/passwd
 
-.image image/passwd2.png _ 690
+.image image/passwd2.png _ 590
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
   Login: 
 - Nombre de la cuenta de usuario. Se utiliza para iniciar la sesión. 
