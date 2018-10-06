@@ -125,3 +125,27 @@ http://itgroup.systems
   Sintaxis:
   groupdel groupname
 - Elimina un grupo de usuarios creado previamente
+* ORDENES APAGAR, REINICIAR, HIBERNAR
+- APAGAR
+  poweroff
+  halt -h now
+  shutdown -h +5
+- REINICIAR
+  reboot
+  shutdown -r now
+  shutdown -r +5
+- NUETRO EQUIPO SUSPENDE O HIBERNAR
+- Para saber si tu ordenador puede suspender y/o hibernar, debemos leer lo que está en el archivo 
+  /sys/power/state
+- Si nos aparece en los resultados “mem” significa que podemos suspender el ordenador. Si aparece “disk” significa que podemos hibernar.
+ 
+* SUSPENDER e HIBERNAR
+- Para suspender usaremos pm-suspend
+  sudo pm-suspend
+   
+- Para hibernar usaremos pm-hibernate
+  sudo pm-hibernate
+- Si su ordenador soporta ambos, o sea, suspender e hibernar, pueden usar un híbrido de ambos.
+  sudo pm-suspend-hybrid
+- Esto es una suspensión como el primer comando que les mostré, pero además de suspender se guarda una imagen del sistema, o sea, suspender + hibernar.
+
