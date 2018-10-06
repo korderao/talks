@@ -42,32 +42,24 @@ http://itgroup.systems
 - Esta entrada especifica el directorio personal de trabajo del usuario. 
   Shell: 
 - Indica que interprete de comandos usará el sistema por defecto para esta cuenta de usuario. Para las cuentas utilizadas para controlar permiso de archivos pero que nunca deberían iniciar una sesión, es posible especificar en el campo de shell /bin/false. El interprete de comandos /bin/false es un pequeño programa que no hace nada, impidiendo que se use la cuenta de usuario para iniciar una sesión en el sistema.
+*  SISTEMA DE CONTRASEÑAS SHADOW
+- El archivo de contraseñas /etc/shadow sólo es modificable y visible por el usuario root, el resto de usuarios NO tiene permisos para leer el contenido del archivo, es decir las contraseñas encriptadas.
 
-* ARCHIVO DE USUARIOS Y CONTRASEÑAS
-  #! /bin/bash
-  ram=$(free | grep 'Mem:' | awk {'print $2'})
-  echo ram: $ram
-
-* ifconfig(debian) o ip addr show (centos) (ip a s)
-- Podríamos tener una serie de interfaces de red con nombres como ‘eth0’, ‘eth1’, ‘wlan0’, etc. Por lo tanto, si queremos ver la información relativa a una interfaz de red en particular:
-  $ ifconfig eth0
-- Activación o desactivación de una interfaz
-- Con ifconfig, podemos habilitar o deshabilitar una interfaz en particular y la forma en que lo hacemos es:
-  $ ifconfig eth0 up
-- Esto es para abrir una interfaz, para deshabilitar una interfaz el comando es:
-  $ ifconfig eth0 down
-* ifconfig
-- Para asignar una dirección IP a la interfaz mediante ifconfig, el comando:
-  $ ifconfig eth0 192.168.5.45
-- A continuación asignaremos la máscara de red para la dirección IP asignada y el comando para hacerlo es:
-  $ ifconfig netmask 255.255.240.0
-- Por último, para asignar una dirección de difusión, el comando es:
-  $ ifconfig broadcast 192.168.5.255
-- Para asignar una puerta de enlace, ejecuta el siguiente comando:
-  $ route add default gw 192.168.5.10
-- Y para agregar DNS, ejecutar:
-  $ echo “nameserver 8.8.8.8” > /etc/resolv.conf
-
+.image image/shadow.png _ 590
+*  ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
+- Aunque es posible, no es recomendable gestionar los usuarios y grupos del sistema, editando manualmente los archivos /etc/passwd y /etc/group, a través del usuario root.
+- El sistema linux proporciona un conjunto de órdenes que permiten manipular los usuarios, los grupos y sus respectivas contraseñas:
+*  ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
+- useradd
+  Sintaxis:
+  useradd [opciones] login
+- Opciones:
+  -c  Define el “nombre del usuario”.
+  -d  Define el directorio de trabajo del usuario (directorio home).
+  -s  Define el shell que usará por defecto el usuario.
+  -g  Define el grupo base del usuario.
+  -G  Indica a que otros grupos pertenecerá el usuario.
+  -D  Lista los valores por defecto de creación de usuarios del sistema.
 * Ejemplo del uso de ifconfig y awk
   #! /bin/bash
   ip=$(ip a s wlp7s0 2>/dev/null | awk '/inet / {print $2}')
