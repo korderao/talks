@@ -15,28 +15,16 @@ http://itgroup.systems
 - Los usuarios que vamos a gestionar son usuarios locales del sistema. Su gestión sólo afectará al equipo en el que estemos gestionando estos usuarios, y no afectará al resto de equipos de la red.
 - Veremos las órdenes para gestionar usuarios y grupos. Y dónde y cómo el S.O. almacena esta información.
 
-* Ejemplo del uso de /dev/null
-  
-  #!/bin/bash 
-  if ping -c1 google.com &>/dev/null 
-  then 
-  	conec='OK'
-  else 
-  	conec='null'
-  fi
-  echo $conec
+*  ARCHIVO DE USUARIOS Y CONTRASEÑAS
+- Al crear una cuenta de usuario en un sistema Linux, se añade una entrada en la lista de usuarios que se almacena en el archivo de contraseñas /etc/passwd. 
+- Este archivo es un archivo de texto donde cada línea contiene información de una única cuenta de usuario
  
-* comando awk
-
- awk [condicion] { comandos }
-
-    $0 → Mostrar la línea completa
-    $1-$N → Mostrar los campos (columnas) de la línea especificados.
-    FS → Field Separator (Espacio o TAB por defecto)
-    NF → Número de campos (fields) en la línea actual
-    NR → Número de líneas (records) en el stream/fichero a procesar.
-- ejemplo
-    ls -l | awk {'print $3'}
+* ARCHIVO DE USUARIOS Y CONTRASEÑAS
+- Login: 
+- Nombre de la cuenta de usuario. Se utiliza para iniciar la sesión. 
+- Contraseña: 
+- Cada usuario tiene asociado una contraseña. La contraseña en  el archivo /etc/passwd se almacena encriptada. Aun que la contraseña está encriptada el archivo /etc/passwd puede ser leido por todos los usuarios del sistema. Por motivos de seguridad es posible almacenar las contraseñas en un archivo independiente llamado /etc/shadow que únicamente puede ser leído por el usuario root. El sistema indica en /etc/passwd que la contraseña se almacena en un archivo independiente colocando una x en el campo contraseña.
+ 
 * Comando grep
 - El comando linux grep permite encontrar líneas de texto que contengan un cadena o patrón dentro de uno o varios archivos y las las imprime. 
 - Las posibles opciones para mostrar el tamaño son:
