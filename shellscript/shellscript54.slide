@@ -95,15 +95,30 @@ http://itgroup.systems
   Sintaxis:
   su [login]
 - El comando su permite cambiar temporalmente de identidad, si no se especifica el usuario, cambiará al root. Para volver a la identidad anterior es necesario ejecutar la orden exit
+* GESTIONAR USUARIOS Y GRUPOS
+- Un grupo local es la entidad administrativa capaz de incluir un conjunto de usuarios o incluso otros grupos, de tal forma que todos los privilegios concedidos a ese grupo, se heredan de forma directa por los usuarios o grupos que de él dependen
+- Los GID y los nombres asociados se almacenan en el archivo /etc/group, utilizando la sintaxis indicada en la figura.
+
+.image image/group.png _ 690
+* GESTIONAR USUARIOS Y GRUPOS 
+- Nombre del Grupo: Cada grupo tiene que tener un nombre único en el sistema.
+- Contraseña del Grupo: Los grupos pueden tener también una contraseña asociada. Un usuario puede cambiar su grupo por defectomediante la orden newgrp. Si el grupo está protegido mediante una contraseña, el usuario necesitará esta contraseña para realizar el cambio de grupo sino pertenece a este grupo. 
+- Identificador de Grupo (GID): Cada grupo requiere un identificador que es un número entero no negativo. 
+- Miembros del Grupo: Lista de los usuarios que pertenecen a este grupo. Los distintos usuarios están separados por comas. 
+* GESTIONAR USUARIOS Y GRUPOS
+- archivo /etc/group
+
+.image image/agroup.png _ 690
+* ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groups
   Sintaxis:
   groups user
 - Lista a que grupos pertenece el usuario user.
-* ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groupadd
   Sintaxis:
   groupadd groupname
 - Crea un grupo de usuarios vacío llamado groupname
+* ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groupmod
   Sintaxis:
   groupmod [opciones] groupname
@@ -111,7 +126,6 @@ http://itgroup.systems
 - Opciones:
   -n name
 - Cambia el nombre del grupo a name
-* ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groupdel
   Sintaxis:
   groupdel groupname
