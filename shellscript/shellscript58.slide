@@ -103,7 +103,7 @@ http://itgroup.systems
 - Miembros del Grupo: Lista de los usuarios que pertenecen a este grupo. Los distintos usuarios están separados por comas. 
 * GESTIONAR USUARIOS Y GRUPOS
 - archivo /etc/group
-.image image/agroup.png _ 690
+.image image/agroup.png _ 590
 * ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groups
   Sintaxis:
