@@ -18,17 +18,17 @@ http://itgroup.systems
 *  ARCHIVO DE USUARIOS Y CONTRASEÑAS
 - Al crear una cuenta de usuario en un sistema Linux, se añade una entrada en la lista de usuarios que se almacena en el archivo de contraseñas /etc/passwd. 
 - Este archivo es un archivo de texto donde cada línea contiene información de una única cuenta de usuario
- 
+ .image image/passwd.png _ 690
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
-- Login: 
+  Login: 
 - Nombre de la cuenta de usuario. Se utiliza para iniciar la sesión. 
-- Contraseña: 
+  Contraseña: 
 - Cada usuario tiene asociado una contraseña. La contraseña en  el archivo /etc/passwd se almacena encriptada. Aun que la contraseña está encriptada el archivo /etc/passwd puede ser leido por todos los usuarios del sistema. Por motivos de seguridad es posible almacenar las contraseñas en un archivo independiente llamado /etc/shadow que únicamente puede ser leído por el usuario root. El sistema indica en /etc/passwd que la contraseña se almacena en un archivo independiente colocando una x en el campo contraseña.
  
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
-- User ID: 
+  User ID: 
 - Cada cuenta de usuario requiere de un id único llamado UID (User Identifier). El UID es un entero no negativo. El usuario root tiene asignado el UID cero. Los UIDs comprendidos entre 1 y 499 están reservados para propósitos administrativos y los usuarios convencionales del sistema empiezan a partir del UID 500. 
-- Group ID (GID): 
+  Group ID (GID): 
 - Cada usuario tiene asociado un grupo por defectocon un GID (Group Identifier). Igual que el UID, el GID es un entero no negativo. El GID de cada usuario almacenado en el archivo /etc/passwd es el identificador del grupo por defecto, aunque un usuario puede pertenecer a varios grupos.  
 * ARCHIVO DE USUARIOS Y CONTRASEÑAS
   Nombre del usuario: 
@@ -38,7 +38,7 @@ http://itgroup.systems
   Shell: 
 - Indica que interprete de comandos usará el sistema por defecto para esta cuenta de usuario. Para las cuentas utilizadas para controlar permiso de archivos pero que nunca deberían iniciar una sesión, es posible especificar en el campo de shell /bin/false. El interprete de comandos /bin/false es un pequeño programa que no hace nada, impidiendo que se use la cuenta de usuario para iniciar una sesión en el sistema.
 
-* Ejemplo del uso de free, grep y awk
+* ARCHIVO DE USUARIOS Y CONTRASEÑAS
   #! /bin/bash
   ram=$(free | grep 'Mem:' | awk {'print $2'})
   echo ram: $ram
