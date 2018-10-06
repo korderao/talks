@@ -1,0 +1,130 @@
+Shellscript
+Introducción a Shell Script
+
+Jose Luis Cordero Llanos
+Developer
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+
+* /dev/null
+
+- A efectos prácticos imagínate un cubo de basura, un pozo sin fondo o el espacio sideral al que lanzar cualquier cosa sin posibilidad de recuperarla
+- Pero si ya tengo comandos como rm, ¿para qué quiero otra cosa nueva que borre?
+- ¿cómo harías para anular en tiempo de ejecución la salida estándar de un error en un comando dentro de un script para la shell? Aquí es donde entra /dev/null.
+  usuario@laptop:~$ cat pruebas
+  cat: pruebas: No existe el fichero o el directorio
+  usuario@laptop:~$ cat pruebas 2>/dev/null
+  usuario@laptop:~$
+* Ejemplo del uso de /dev/null
+  
+  #!/bin/bash 
+  if ping -c1 google.com &>/dev/null 
+  then 
+  	conec='OK'
+  else 
+  	conec='null'
+  fi
+  echo $conec
+ 
+* comando awk
+
+ awk [condicion] { comandos }
+
+    $0 → Mostrar la línea completa
+    $1-$N → Mostrar los campos (columnas) de la línea especificados.
+    FS → Field Separator (Espacio o TAB por defecto)
+    NF → Número de campos (fields) en la línea actual
+    NR → Número de líneas (records) en el stream/fichero a procesar.
+- ejemplo
+    ls -l | awk {'print $3'}
+* Comando grep
+- El comando linux grep permite encontrar líneas de texto que contengan un cadena o patrón dentro de uno o varios archivos y las las imprime. 
+- Las posibles opciones para mostrar el tamaño son:
+    -i ignora la deferencia entre mayúsculas y minúsculas en las búsquedas y las considera equivalentes.
+    -n muestra el texto de la línea y el número de línea dentro del archivo en la que se encontró
+    -c muestra solamente el número de líneas coincidentes
+    -l lista los archivos en donde se han encontrado coincidencias sin mostrar el texto
+    -r permite hacer búsquedas de forma recursiva dentro de los directorios que se encuentran en la ruta de búsqueda.
+- Ejemplo
+  $ grep -i nologin /etc/passwd
+ 
+* Comando free
+- El comando Free en Linux muestra la cantidad de memoria libre y usada que tiene el sistema. Por una parte muestra la memoria física y por otra la swap, también muestra la memoria caché y de buffer consumida por el Kernel.
+- Ejemplo  
+  $ free
+* Ejemplo del uso de free, grep y awk
+  #! /bin/bash
+  ram=$(free | grep 'Mem:' | awk {'print $2'})
+  echo ram: $ram
+
+* ifconfig(debian) o ip addr show (centos) (ip a s)
+- Podríamos tener una serie de interfaces de red con nombres como ‘eth0’, ‘eth1’, ‘wlan0’, etc. Por lo tanto, si queremos ver la información relativa a una interfaz de red en particular:
+  $ ifconfig eth0
+- Activación o desactivación de una interfaz
+- Con ifconfig, podemos habilitar o deshabilitar una interfaz en particular y la forma en que lo hacemos es:
+  $ ifconfig eth0 up
+- Esto es para abrir una interfaz, para deshabilitar una interfaz el comando es:
+  $ ifconfig eth0 down
+* ifconfig
+- Para asignar una dirección IP a la interfaz mediante ifconfig, el comando:
+  $ ifconfig eth0 192.168.5.45
+- A continuación asignaremos la máscara de red para la dirección IP asignada y el comando para hacerlo es:
+  $ ifconfig netmask 255.255.240.0
+- Por último, para asignar una dirección de difusión, el comando es:
+  $ ifconfig broadcast 192.168.5.255
+- Para asignar una puerta de enlace, ejecuta el siguiente comando:
+  $ route add default gw 192.168.5.10
+- Y para agregar DNS, ejecutar:
+  $ echo “nameserver 8.8.8.8” > /etc/resolv.conf
+
+* Ejemplo del uso de ifconfig y awk
+  #! /bin/bash
+  ip=$(ip a s wlp7s0 2>/dev/null | awk '/inet / {print $2}')
+  echo ip:$ip
+* comando df
+- Es un comando estandar de Unix, usado para desplegar la cantidad de espacio libre o disponible en los sistemas de archivos a los que el usuario que lo invoca tiene permisos de lectura.
+- Las posibles opciones para mostrar el tamaño son:
+
+  $ df -h    # formato humano 
+  $ df -m    # formato en megabytes
+  $ df -k    # formato en blockes de 1 kilobye, este es el default
+
+* Ejemplo de df
+
+  #! /bin/bash
+  d=$(df -h | grep /$ | awk {'print $2'})
+  echo espacio de disco: $d
+
+* Que es Cron
+-El nombre cron viene del griego chronos que significa “tiempo”. En el sistema operativo Unix, cron es un administrador regular de procesos en segundo plano (demonio) que ejecuta procesos o guiones a intervalos regulares (por ejemplo, cada minuto, día, semana o mes). Los procesos que deben ejecutarse y la hora en la que deben hacerlo se especifican en el fichero crontab.
+
+* Cómo funciona
+- El demonio cron inicia de /etc/rc.d/ o /etc/init.d dependiendo de la distribucion. Cron se ejecuta en el background, revisa cada minuto la tabla de tareas crontab /etc/crontab o en /var/spool/cron en búsqueda de tareas que se deban cumplir. Como usuario podemos agregar comandos o scripts con tareas a cron para automatizar algunos procesos. Esto es util por ejemplo para automatizar la actualizacion de un sistema o un buen sistema de respaldos
+* Que es Crontab
+- Crontab es un simple archivo de texto que guarda una lista de comandos a ejecutar en un tiempo especificado por el usuario. Crontab verificará la fecha y hora en que se debe ejecutar el script o el comando, los permisos de ejecución y lo realizará en el background.
+- Para ver el contenido de nuestra programación de tareas ejecutaremos la orden,
+  crontab -l
+- si lo que queremos ver son las de administrador, ejecutaremos
+  sudo crontab -l
+- Mientras que para editar nuestra tabla de programación de tareas ejecutaremos la orden,
+  crontab -e
+
+* Crontab
+- De esta manera tenemos una idea clara de donde tiene que ir cada cosa…
+  ##########################################################
+  #minuto (0-59),                                          #
+  #|  hora (0-23),                                         #
+  #|  |  día del mes (1-31),                               #
+  #|  |  |  mes (1-12),                                    #
+  #|  |  |  |  día de la semana (0-6 donde 0=Domingo)      #
+  #|  |  |  |  |       comandos                            #
+  ##########################################################
+- m corresponde al minuto en que se va a ejecutar el script, el valor va de 0 a 59
+- h la hora exacta, se maneja el formato de 24 horas, los valores van de 0 a 23, siendo 0 las 12:00 de la medianoche.
+- dia hace referencia al día del mes, por ejemplo se puede especificar 15 si se quiere ejecutar cada dia 15
+- mes (1-12)
+- día de la semana, puede ser numérico (0 a 7, donde 0 y 7 son domingo) o las 3 primeras letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
+- user define el usuario que va a ejecutar el comando, puede ser root, u otro usuario diferente siempre y cuando tenga permisos de ejecución del script.
+- command refiere al comando o a la ruta absoluta del script a ejecutar, ejemplo: /home/usuario/scripts/actualizar.sh, si acaso llama a un script este debe ser ejecutable
