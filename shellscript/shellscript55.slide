@@ -44,8 +44,7 @@ http://itgroup.systems
 - Indica que interprete de comandos usará el sistema por defecto para esta cuenta de usuario. Para las cuentas utilizadas para controlar permiso de archivos pero que nunca deberían iniciar una sesión, es posible especificar en el campo de shell /bin/false. El interprete de comandos /bin/false es un pequeño programa que no hace nada, impidiendo que se use la cuenta de usuario para iniciar una sesión en el sistema.
 *  SISTEMA DE CONTRASEÑAS SHADOW
 - El archivo de contraseñas /etc/shadow sólo es modificable y visible por el usuario root, el resto de usuarios NO tiene permisos para leer el contenido del archivo, es decir las contraseñas encriptadas.
-
-.image image/shadow.png _ 590
+.image image/shadow.png _ 690
 *  ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - Aunque es posible, no es recomendable gestionar los usuarios y grupos del sistema, editando manualmente los archivos /etc/passwd y /etc/group, a través del usuario root.
 - El sistema linux proporciona un conjunto de órdenes que permiten manipular los usuarios, los grupos y sus respectivas contraseñas:
@@ -98,7 +97,6 @@ http://itgroup.systems
 * GESTIONAR USUARIOS Y GRUPOS
 - Un grupo local es la entidad administrativa capaz de incluir un conjunto de usuarios o incluso otros grupos, de tal forma que todos los privilegios concedidos a ese grupo, se heredan de forma directa por los usuarios o grupos que de él dependen
 - Los GID y los nombres asociados se almacenan en el archivo /etc/group, utilizando la sintaxis indicada en la figura.
-
 .image image/group.png _ 690
 * GESTIONAR USUARIOS Y GRUPOS 
 - Nombre del Grupo: Cada grupo tiene que tener un nombre único en el sistema.
@@ -107,7 +105,6 @@ http://itgroup.systems
 - Miembros del Grupo: Lista de los usuarios que pertenecen a este grupo. Los distintos usuarios están separados por comas. 
 * GESTIONAR USUARIOS Y GRUPOS
 - archivo /etc/group
-
 .image image/agroup.png _ 690
 * ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - groups
