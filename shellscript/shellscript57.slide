@@ -42,7 +42,7 @@ http://itgroup.systems
 - Indica que interprete de comandos usará el sistema por defecto para esta cuenta de usuario. Para las cuentas utilizadas para controlar permiso de archivos pero que nunca deberían iniciar una sesión, es posible especificar en el campo de shell /bin/false. El interprete de comandos /bin/false es un pequeño programa que no hace nada, impidiendo que se use la cuenta de usuario para iniciar una sesión en el sistema.
 *  SISTEMA DE CONTRASEÑAS SHADOW
 - El archivo de contraseñas /etc/shadow sólo es modificable y visible por el usuario root, el resto de usuarios NO tiene permisos para leer el contenido del archivo, es decir las contraseñas encriptadas.
-.image image/shadow.png _ 690
+.image image/shadow.png _ 790
 *  ORDENES PARA GESTIONAR USUARIOS Y GRUPOS
 - Aunque es posible, no es recomendable gestionar los usuarios y grupos del sistema, editando manualmente los archivos /etc/passwd y /etc/group, a través del usuario root.
 - El sistema linux proporciona un conjunto de órdenes que permiten manipular los usuarios, los grupos y sus respectivas contraseñas:
