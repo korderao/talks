@@ -1,0 +1,44 @@
+SERVIDOR FTP
+
+Jose Luis Cordero Llanos
+Developer
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+
+* 1. INTRODUCCIÓN
+- Instalar vsftpd en CentOS 7 es sencillo, en esta versión todavía se sigue usando Yum, el gestor de paquetes del universo de Red Hat. Además vsftpd no tiene dependencias, así que no hay riesgos de alterar otras partes del sistema.
+- Para instalar vsftpd hay que ejecutar el siguiente comando, y luego aceptar la instalación sugerida:
+	yum install vsftpd
+- Para iniciar:
+	systemctl start vsftpd.service
+- Para parar:
+	systemctl stop vsftpd.service
+- Para reiniciar:
+	systemctl restart vsftpd.service
+- Para que arranque junto con el sistema:
+	systemctl enable vsftpd.service
+* ARCHIVO DE CONFIGURACION
+- Archivo 
+	/etc/vsftpd/vsftpd.conf
+* PARAMETROS DE CONFIGURACION
+- Habilitar el acceso FTP a usuarios anónimos:
+	anonymous_enable=YES
+- Permitir el acceso de usuarios locales a sus respectivas carpetas privadas,utilizando su propio login y password para acceder al servidor FTP
+	local_enable=YES
+- Permitir el modo escritura a los usuarios
+	write_enable=YES
+- Enjaula a los usuarios dentro de su propio directorio personal
+	chroot_local_user=YES
+* PARAMETROS DE CONFIGURACION
+- Habilita la lista de usuarios que sólo puedan acceder a sus respectivas carpetas personales al hacer el FTP y no a todo sistema
+	chroot_list_enable=YES
+	chroot_list_file=/etc/vsftpd.chroot_list
+- Mensaje de bienvenida que muestra en pantalla el mensaje que esté entre comillas dobles, cuando alguien se conecta al servidor
+	ftpd_banner= “mensaje de bienvenida”.
+- Activa el registro de errores, quién se conecta, etc.
+	xferlog_enable=YES
+- Especifica el archivo de registros.
+	xferlog_file= ruta/archivo
+	
