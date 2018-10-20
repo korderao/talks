@@ -7,8 +7,7 @@ korderao@gmail.com
 http://itgroup.systems
 
 
-* 1. INTRODUCCIÓN
-- Instalar vsftpd en CentOS 7 es sencillo, en esta versión todavía se sigue usando Yum, el gestor de paquetes del universo de Red Hat. Además vsftpd no tiene dependencias, así que no hay riesgos de alterar otras partes del sistema.
+* 1. INSTALACION
 - Para instalar vsftpd hay que ejecutar el siguiente comando, y luego aceptar la instalación sugerida:
 	yum install vsftpd
 - Para iniciar:
@@ -41,4 +40,11 @@ http://itgroup.systems
 	xferlog_enable=YES
 - Especifica el archivo de registros.
 	xferlog_file= ruta/archivo
-	
+* HABILITAR FIREWALL
+- Para abrir el puerto en el firewall:
+  firewall-cmd --permanent --add-service=ftp
+  firewall-cmd --list-all
+* HABILITAR HOME DEL USUARIO
+ getsebool -a | grep ftp
+- Si el anterior comando nos muestra el valor en off
+ setsebool -P ftp_home_dir on 
