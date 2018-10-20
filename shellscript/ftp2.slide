@@ -44,6 +44,11 @@ http://itgroup.systems
 - Para abrir el puerto en el firewall:
   firewall-cmd --permanent --add-service=ftp
   firewall-cmd --list-all
+* CREAMOS USUARIO FTP
+ - crear usuario academy
+  useradd -g ftp -d /home/academy academy
+ - asignamos contrasena
+  passwd academy
 * HABILITAR HOME DEL USUARIO
  getsebool -a | grep ftp
 - Si el anterior comando nos muestra el valor en off
