@@ -54,6 +54,7 @@ http://itgroup.systems
 - Para abrir el puerto en el firewall:
   firewall-cmd --permanent --add-service=ftp
   firewall-cmd --list-all
+  firewall-cmd --reload
 * CREAMOS USUARIO FTP
 - crear usuario academy
   useradd -g ftp -d /home/academy academy
