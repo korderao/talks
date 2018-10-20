@@ -63,4 +63,4 @@ http://itgroup.systems
 * HABILITAR HOME DEL USUARIO
  getsebool -a | grep ftp
 - Si el anterior comando nos muestra el valor en off
- setsebool -P ftp_home_dir on 
+ setsebool -P tftp_home_dir on 
