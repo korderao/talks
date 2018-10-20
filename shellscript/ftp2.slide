@@ -45,9 +45,9 @@ http://itgroup.systems
   firewall-cmd --permanent --add-service=ftp
   firewall-cmd --list-all
 * CREAMOS USUARIO FTP
- - crear usuario academy
+- crear usuario academy
   useradd -g ftp -d /home/academy academy
- - asignamos contrasena
+- asignamos contrasena
   passwd academy
 * HABILITAR HOME DEL USUARIO
  getsebool -a | grep ftp
