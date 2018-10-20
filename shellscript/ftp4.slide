@@ -6,7 +6,17 @@ korderao@gmail.com
 @korderao
 http://itgroup.systems
 
-
+* ASIGNAR IP ESTATICA 
+- Vamos a asignar una dirección IP estática a la tarjeta de red que ofrecerá el servicio FTP.
+ etc/sysconfig/network-scripts/ifcfg-eth0
+- Editamos algunas lineas
+ BOOTPROTO=static
+ IPADDR=192.168.1.101
+ NETMASK=255.255.255.0
+- Por ultimo, reiniciamos la interfaz: 
+ ifdown enp0s3 → ifup enp0s3 
+- Comprobamos la nueva configuración: 
+ ip addr
 * 1. INSTALACION
 - Para instalar vsftpd hay que ejecutar el siguiente comando, y luego aceptar la instalación sugerida:
 	yum install vsftpd
