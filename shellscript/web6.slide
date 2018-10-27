@@ -61,5 +61,5 @@ http://itgroup.systems
 - Negar el acceso remoto al usuario root
 - Eliminar la base de datos “test”, y finalmente recargar los privilegios.
 * CONFIGURACION 
-.image image/mariadb.png _ 590 
+.image image/mariadb.png _ 490 
    
