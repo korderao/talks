@@ -60,5 +60,6 @@ http://itgroup.systems
 - Eliminar el usuario “anonymous” 
 - Negar el acceso remoto al usuario root
 - Eliminar la base de datos “test”, y finalmente recargar los privilegios.
+* CONFIGURACION 
 .image image/mariadb.png _ 590 
    
