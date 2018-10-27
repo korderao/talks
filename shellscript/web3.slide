@@ -46,7 +46,7 @@ http://itgroup.systems
  <?php phpinfo(); ?>
 * ACCEDEMOS DESDE EL NAVEGADOR
   http://IP_del_servidor/test.php
-.image image/php.png _ 690
+.image image/php.png _ 590
 
    
    
