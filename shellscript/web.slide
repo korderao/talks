@@ -1,0 +1,31 @@
+SERVIDOR WEB
+
+Jose Luis Cordero Llanos
+Developer
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+* INSTALACION APACHE
+- Apache, es un servidor web HTTP de código abierto, para distintas plataformas, que implementa el protocolo HTTP/1.12 Podemos instalar Apache fácilmente usando gestor de paquetes de CentOS “yum”. Para iniciar, tecleamos los siguientes comandos:
+  # yum install httpd
+- Ya instalado el servidor web, procedemos a iniciar el servicio.
+  # systemctl start|stop|restart/status httpd
+- Para que arranque junto con el sistema:
+	# systemctl enable httpd
+
+* AGREGAMOS EL SERVICIO AL FIREWALL
+
+- Agregamos el servicio:
+  # sudo firewall-cmd --permanet --add-service=http
+- Reiniciamos el firewall:
+  # firewall-cmd --reload
+- Listamos configuracion del firewall:
+  # firewall-cmd --list-all
+.image image/firewall.png _ 690
+  
+* ACCEDEMOS 
+- Ahora procedemos a verificar que el servicio funcione de manera correcta. Para esto, escribimos la dirección IP de nuestro Server en nuestro navegador web favorito.
+  http://192.168.1.101/
+.image image/httpd.png _ 690
+
