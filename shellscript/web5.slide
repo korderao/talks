@@ -53,6 +53,7 @@ http://itgroup.systems
   # yum install mariadb-server mariadb
 - Iniciamos MariaDB con el siguiente comando:
   # systemctl start|stop|restart|status mariadb
+* CONFIGURACION 
 - Adicionalmente, para asegurar nuestra instalación de MariaDB, ejecutamos el script de seguridad:
   # mysql_secure_installation
 - Lo que nos solicita alguna información, como un cambio de contraseña para el usuario root (por default no cuenta con password)
