@@ -44,8 +44,8 @@ http://itgroup.systems
   # nano /var/www/html/test.php
 - En este archivo, agregamos el siguiente contenido y guardamos el archivo:
  <?php phpinfo(); ?>
- * ACCEDEMOS DESDE EL NAVEGADOR
-   http://IP_del_servidor/test.php
-   .image image/php.png _ 690
+* ACCEDEMOS DESDE EL NAVEGADOR
+  http://IP_del_servidor/test.php
+  .image image/php.png _ 690
    
    
