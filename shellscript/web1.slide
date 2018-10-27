@@ -1,0 +1,51 @@
+SERVIDOR WEB
+
+Jose Luis Cordero Llanos
+Developer
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+* INSTALACION APACHE
+- Apache, es un servidor web HTTP de código abierto, para distintas plataformas, que implementa el protocolo HTTP/1.12 Podemos instalar Apache fácilmente usando gestor de paquetes de CentOS “yum”. Para iniciar, tecleamos los siguientes comandos:
+  # yum install httpd
+- Ya instalado el servidor web, procedemos a iniciar el servicio.
+  # systemctl start|stop|restart|status httpd
+- Para que arranque junto con el sistema:
+	# systemctl enable httpd
+
+* AGREGAMOS EL SERVICIO AL FIREWALL
+
+- Agregamos el servicio:
+  # sudo firewall-cmd --permanet --add-service=http
+- Reiniciamos el firewall:
+  # firewall-cmd --reload
+- Listamos configuracion del firewall:
+  # firewall-cmd --list-all
+.image image/firewall.png _ 490
+  
+* ACCEDEMOS DESDE EL NAVEGADOR
+- Ahora procedemos a verificar que el servicio funcione de manera correcta. Para esto, escribimos la dirección IP de nuestro Server en nuestro navegador web favorito.
+  http://IP_del_servidor/
+.image image/httpd.png _ 690
+
+* INSTALACION DE PHP
+- PHP es el acrónimo recursivo de PHP: Hypertext Preprocessor, que es un lenguaje enfocado para el desarrollo web que permite ejecutar scripts, conectarse con bases de datos de MySQL/MariaDB y muchas otras características.
+- Para instalar PHP simplemente ejecutamos:
+  # yum install php
+- Con esto, solo basta reiniciar el servidor web Apache en nuestro Server para que Apache trabaje con PHP:
+  # systemctl restart httpd
+- Sin embargo, es muy común usar librerías o módulos adicionales, que nos permiten incrementar las características de PHP, esto lo hacemos ejecutando:
+  # yum search php
+* COMPROBAMOS QUE APACHE TRABEJE CON PHP 
+- Ahora debemos comprobar que el servidor web Apache trabaje correctamente con nuestra configuración de PHP.
+- Vamos a crear para esto, un script llamado test.php en el directorio web por defecto en la instalación del servidor web Apache.
+- Por defecto, en un sistema operativo CentOS 7, debemos guardar nuestro script en la carpeta “/var/www/html/”
+  # nano /var/www/html/test.php
+- En este archivo, agregamos el siguiente contenido y guardamos el archivo:
+ <?php phpinfo(); ?>
+ * ACCEDEMOS DESDE EL NAVEGADOR
+   http://IP_del_servidor/test.php
+   .image image/php.png _ 690
+   
+   
