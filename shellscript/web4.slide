@@ -37,7 +37,7 @@ http://itgroup.systems
   # systemctl restart httpd
 - Sin embargo, es muy común usar librerías o módulos adicionales, que nos permiten incrementar las características de PHP, esto lo hacemos ejecutando:
   # yum search php
-* COMPROBAMOS QUE APACHE TRABEJE CON PHP 
+* COMPROBAMOS QUE APACHE TRABAJE CON PHP 
 - Ahora debemos comprobar que el servidor web Apache trabaje correctamente con nuestra configuración de PHP.
 - Vamos a crear para esto, un script llamado test.php en el directorio web por defecto en la instalación del servidor web Apache.
 - Por defecto, en un sistema operativo CentOS 7, debemos guardar nuestro script en la carpeta “/var/www/html/”
@@ -47,6 +47,17 @@ http://itgroup.systems
 * ACCEDEMOS DESDE EL NAVEGADOR
   http://IP_del_servidor/test.php
 .image image/php.png _ 590
-
-   
+* INSTALANDO MARIA DB o MYSQL
+- Por último, solo necesitamos instalar nuestro manejador de bases de datos.
+- MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL.
+  # yum install mariadb-server mariadb
+- Iniciamos MariaDB con el siguiente comando:
+  # systemctl start|stop|restart|status mariadb
+- Adicionalmente, para asegurar nuestra instalación de MariaDB, ejecutamos el script de seguridad:
+  # mysql_secure_installation
+- Lo que nos solicita alguna información, como un cambio de contraseña para el usuario root (por default no cuenta con password)
+- Eliminar el usuario “anonymous” 
+- Negar el acceso remoto al usuario root
+- Eliminar la base de datos “test”, y finalmente recargar los privilegios.
+.image image/mariadb.png _ 590 
    
