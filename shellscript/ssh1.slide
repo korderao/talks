@@ -15,7 +15,7 @@ http://itgroup.systems
   /etc/ssh/sshd_config
 - Antes de realizar cualquier cambio, se recomienda hacer una copia del archivo de configuración original para que, si experimenta algún problema, pueda revertir los cambios por defecto  
   # cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig
-- Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
+* Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
   # nano /etc/ssh/sshd_config
 - Lo primero que le gustaría cambiar es el número de puerto de escucha. De forma predeterminada, el demonio SSH escucha en el puerto 22 y, por razones de seguridad, puede cambiar el número a otra cosa. Cambiar las líneas:
   port 22
