@@ -26,7 +26,7 @@ http://itgroup.systems
   # firewall-cmd --permanen --add-service=telnet
   firewall-cmd --list-all
   firewall-cmd --reload
-- Iniciar sesión
+- Una vez que haya terminado con la configuración, verifique si el telnet a un servidor funciona.
   Sintaxis: telnet [nombre del host] o [ip]
 
 * 2. SSH
