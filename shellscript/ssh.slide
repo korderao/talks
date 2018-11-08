@@ -21,6 +21,7 @@ http://itgroup.systems
   disable = no
 - Una vez que realice los cambios puede guardar y cerrar el archivo. Para que los cambios surtan efecto, debe reiniciar el demonio SSH
   # systemctl start|stop|restart|status xinetd.service
+* Configurando
 - Agrega el servicio a firewall.
   # firewall-cmd --permanen --add-service=telnet
   firewall-cmd --list-all
