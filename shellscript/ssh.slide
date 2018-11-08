@@ -7,15 +7,35 @@ korderao@gmail.com
 @korderao
 http://itgroup.systems
 
+* 1. TELNET
+- Instalando telnet
+  # yum install telnet-server telnet
+- Una vez que los paquetes están instalados, está listo para conectarse al servidor a través de TELENET. El archivo de configuración predeterminado para el demonio xinetd es:
+  /etc/xinetd.d/telnet
+- Antes de realizar cualquier cambio, se recomienda hacer una copia del archivo de configuración original para que, si experimenta algún problema, pueda revertir los cambios por defecto  
+  # cp /etc/xinetd.d/telnet /etc/xinetd.d/telnet.orig
+* Configurando 
+- Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
+  nano /etc/xinetd.d/telnet
+- verificar que   
+  disable = no
+- Una vez que realice los cambios puede guardar y cerrar el archivo. Para que los cambios surtan efecto, debe reiniciar el demonio SSH
+  # systemctl start|stop|restart|status xinetd.service
+- Agrega el servicio a firewall.
+  # firewall-cmd --permanen --add-service=telnet
+  firewall-cmd --list-all
+  firewall-cmd --reload
+- Iniciar sesión
+  Sintaxis: telnet [nombre del host] o [ip]
 
-* 1. SSH
+* 2. SSH
 - En Linux podemos instalar el cliente y servidor SSH con el paquete ssh
   # yum install openssh openssh-server openssh-clients openssl-libs
 - Una vez que los paquetes están instalados, está listo para conectarse al servidor a través de SSH. El archivo de configuración predeterminado para el demonio sshd es /etc/ssh/sshd_config y la mayoría de las configuraciones para el demonio están definidas en este archivo
   /etc/ssh/sshd_config
 - Antes de realizar cualquier cambio, se recomienda hacer una copia del archivo de configuración original para que, si experimenta algún problema, pueda revertir los cambios por defecto  
   # cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig
-* 2. Configurando
+* Configurando
 - Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
   # nano /etc/ssh/sshd_config
 - Lo primero que le gustaría cambiar es el número de puerto de escucha. De forma predeterminada, el demonio SSH escucha en el puerto 22 y, por razones de seguridad, puede cambiar el número a otra cosa. Cambiar las líneas:
