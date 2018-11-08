@@ -15,7 +15,8 @@ http://itgroup.systems
   /etc/ssh/sshd_config
 - Antes de realizar cualquier cambio, se recomienda hacer una copia del archivo de configuración original para que, si experimenta algún problema, pueda revertir los cambios por defecto  
   # cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig
-* Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
+* 2. Configurando
+- Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
   # nano /etc/ssh/sshd_config
 - Lo primero que le gustaría cambiar es el número de puerto de escucha. De forma predeterminada, el demonio SSH escucha en el puerto 22 y, por razones de seguridad, puede cambiar el número a otra cosa. Cambiar las líneas:
   port 22
@@ -23,13 +24,19 @@ http://itgroup.systems
 - Descomentar las siguientes lineas
   #PermitEmptyPasswords no
   #PasswordAuthentication yes
- 
-- Una vez que realice los cambios puede guardar y cerrar el archivo. Para que los cambios surtan efecto, debe reiniciar el demonio SSH
+ - Una vez que realice los cambios puede guardar y cerrar el archivo. Para que los cambios surtan efecto, debe reiniciar el demonio SSH
   # systemctl start|stop|restart|status sshd.service
 * Anadir ssh al FIREWALL
 - Para abrir el puerto en el firewall:
   firewall-cmd --permanent --add-service=ftp
   firewall-cmd --list-all
   firewall-cmd --reload
-
+- Iniciar sesión 
+  Sintaxis: ssh [-o parámetro valor] [user]@[nombre del host]
+- Clientes SSH en modo gráfico:
+  PUTTY
+- Copiar archivos
+  Sintaxis: scp [-r] [origen] [destino]
+- Ejemplo
+  scp -r zarlee.png academy@192.168.1.104:/home/academy
 
