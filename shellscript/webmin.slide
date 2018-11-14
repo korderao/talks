@@ -18,9 +18,9 @@ http://itgroup.systems
   enabled=1
 - Instalamos la clave GPG de webmin
   # rpm --import http://www.webmin.com/jcameron-key.asc
-* INSTALANDO
 - Ahora, actualizamos los repositorios:
   # yum check-update
+* INSTALANDO
 - Instalamos webmin
   # yum install webmin -y
 - Inicia el servicio y haz que se inicie automáticamente
@@ -29,7 +29,7 @@ http://itgroup.systems
 - Agregamos el puerto al firewall.
   # firewall-cmd --add-port=10000/tcp
   # firewall-cmd --list-all
-* Configurando
+* Accediendo
 - Ahora, abra http://ip.add.re.ss: 10000 e ingrese su nombre de usuario y contraseña de root
   https://192.168.1.104:10000
   
