@@ -1,0 +1,48 @@
+POTGRESQL
+MODULO III
+
+Jose Luis Cordero Llanos
+Developer and SysAdmin
+korderao@gmail.com
+@korderao
+http://itgroup.systems
+
+* 1. POSTGRESL
+- Instalando postgresql
+  # sudo yum install postgresql-server postgresql-contrib
+- Una vez que los paquetes están instalados, está listo para inicializarlo
+  sudo postgresql-setup initdb
+- salida
+  Initializing database ... OK
+- Para iniciar el servicio PostgreSQL y habilitarlo para que se inicie en el arranque, simplemente escriba:
+  # sudo systemctl start|stop|restart|status postgresql
+  # sudo systemctl enable|disable postgresq
+- Antes de realizar cualquier cambio, se recomienda hacer una copia del archivo de configuración original para que, si experimenta algún problema, pueda revertir los cambios por defecto  
+  # sudo cp /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.orig
+* Configurando 
+- Para ver y editar el archivo de configuración, puede utilizar un editor de texto de su elección. Vamos a utilizar nano por su simplicidad
+  # nano /var/lib/pgsql/data/pg_hba.conf
+- Encuentra las líneas que se ven así, cerca de la parte inferior del archivo
+  host    all             all             127.0.0.1/32            ident
+  host    all             all             ::1/128                 ident
+-  reemplace "ident" con "md5", para que se vean así:
+  host    all             all             127.0.0.1/32            md5
+  host    all             all             ::1/128                 md5
+- Agregamos permisos de acceso a la IP del equipo que se va a conectar 
+  host    all             all             192.168.1.22/32         trust
+- Cambiamos la configuración de Postgres para que acepte conexiones de todos lados. 
+- Editar el archivo de configuración llamado /var/lib/pgsql/9.3/data/postgresql.conf
+  listen_addresses ='*'
+* Configurando
+- Agrega el servicio a firewall.
+  # firewall-cmd --permanen --add-service=postgresql
+  # firewall-cmd --list-all
+  # firewall-cmd --reload
+- Una vez que haya terminado con la configuración, verificamos
+  # su postgres
+  # psql
+- Creamos una contraseña para el superusuario postgres.
+  # \password
+- Descargamos e instalamos el software PgAdmin
+  http://www.pgadmin.org/
+  
